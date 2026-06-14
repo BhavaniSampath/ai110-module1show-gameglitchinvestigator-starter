@@ -46,6 +46,7 @@ def parse_guess(raw: str):
 #             return "Too High", "📈 Go HIGHER!"
 #         return "Too Low", "📉 Go LOWER!"
 
+## Fixed issues with hints
 def check_guess(guess, secret):
     if guess == secret:
         return "Win", "🎉 Correct!"
@@ -171,7 +172,8 @@ if submit:
         st.error(err)
     else:
         st.session_state.history.append(guess_int)
-
+        #Commented out secrect being converted from int to string
+        
         # if st.session_state.attempts % 2 == 0:
         #     secret = str(st.session_state.secret)
         # else:
